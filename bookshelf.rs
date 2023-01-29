@@ -1,4 +1,4 @@
-struct Bookshelf
+pub struct Bookshelf
 {
     booklist: Vec<Book>
 }

@@ -1,3 +1,6 @@
+mod book;
+mod bookshelf;
+
 use std::io;
 use std::fs::File;
 use std::io::BufReader;
@@ -68,15 +71,23 @@ fn load_books(){
     let mut filename: String = String::from("");
     println!("ファイル名を入力して下さい");
     io::stdin().read_line(&mut filename).expect("Failed to read line");
-    let mut file = File::open(filename).unwrap();
-    let reader = BufReader::new(file);
+    let file = File::open(filename).unwrap();
+    let mut reader = BufReader::new(file);
     let mut contents = String::new();
     reader.read_to_string(&mut contents);
     for line in contents.lines(){
         let bookinfos: Vec<&str> = line.split(',').collect();
-        let title = bookinfos[0];
-        let publisher = 
+        let mut iter = bookinfos.iter();
+        let title = iter.next();
+        let publisher = iter.next();
+        let date = iter.next();
+        let mut authors = Vec::new();
+        while(iter.next() == None)
+        {
+            authors.push(iter.next());
+        }
 
+        let book: Book = Book(title, publisher, date, authors);
     }
 
 }

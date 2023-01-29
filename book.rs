@@ -1,7 +1,7 @@
-struct Book//クラスがない
+pub struct Book//クラスがない
 {
     title: String,
     publisher: String,
     date: String,
-    author: String
+    author: Vec<String>
 }
