@@ -1,4 +1,7 @@
+#[path = "./book.rs"]
+mod book;
+
 pub struct Bookshelf
 {
-    booklist: Vec<Book>
+    booklist: Vec<book::Book>
 }

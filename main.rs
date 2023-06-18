@@ -1,5 +1,5 @@
-mod book;
-mod bookshelf;
+pub mod book;
+pub mod bookshelf;
 
 use std::io;
 use std::fs::File;
@@ -87,7 +87,12 @@ fn load_books(){
             authors.push(iter.next());
         }
 
-        let book: Book = Book(title, publisher, date, authors);
+        let book = book::Book{
+            title : title.as_str(), 
+            publisher = publisher, 
+            date = date, 
+            authors = authors
+        };
     }
 
 }
