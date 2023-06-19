@@ -82,16 +82,16 @@ fn load_books(){
         let publisher = iter.next();
         let date = iter.next();
         let mut authors = Vec::new();
-        while(iter.next() == None)
+        while(iter.next() != None)
         {
-            authors.push(iter.next());
+            authors.push(iter.next().unwrap().to_string());
         }
 
         let book = book::Book{
-            title : title.as_str(), 
-            publisher = publisher, 
-            date = date, 
-            authors = authors
+            title : title.unwrap().to_string(),
+            publisher : publisher.unwrap().to_string(), 
+            date : date.unwrap().to_string(), 
+            author : authors
         };
     }
 

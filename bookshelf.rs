@@ -3,5 +3,5 @@ mod book;
 
 pub struct Bookshelf
 {
-    booklist: Vec<book::Book>
+    pub booklist: Vec<book::Book>
 }

@@ -1,7 +1,7 @@
 pub struct Book//クラスがない
 {
-    title: String,
-    publisher: String,
-    date: String,
-    author: Vec<String>
+    pub title: String,
+    pub publisher: String,
+    pub date: String,
+    pub author: Vec<String>
 }
