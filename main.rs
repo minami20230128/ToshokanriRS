@@ -5,6 +5,9 @@ use std::io;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::prelude::*;
+use std::sync::RwLock;
+
+static bookshelf: RwLock<isize> = RwLock::new(bookshelf::Bookshelf[booklist:Vec::new()]);
 
 fn main() {
     let menu = menu();
@@ -93,6 +96,8 @@ fn load_books(){
             date : date.unwrap().to_string(), 
             author : authors
         };
+
+        bookshelf.add(book);
     }
 
 }
