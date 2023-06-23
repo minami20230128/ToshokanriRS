@@ -7,7 +7,7 @@ use std::io::BufReader;
 use std::io::prelude::*;
 use std::sync::RwLock;
 
-static bookshelf: RwLock<isize> = RwLock::new(bookshelf::Bookshelf[booklist:Vec::new()]);
+static bookshelf: RwLock<bookshelf::Bookshelf> = RwLock::new(bookshelf::Bookshelf{booklist:Vec::new()});
 
 fn main() {
     let menu = menu();
@@ -97,7 +97,8 @@ fn load_books(){
             author : authors
         };
 
-        bookshelf.add(book);
+        let mut writer = bookshelf.write().unwrap();
+        *writer.add(book);
     }
 
 }
