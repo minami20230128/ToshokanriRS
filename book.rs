@@ -1,4 +1,4 @@
-pub struct Book//クラスがない
+pub struct Book
 {
     pub title: String,
     pub publisher: String,

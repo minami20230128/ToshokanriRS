@@ -1,4 +1,3 @@
-pub mod book;
 pub mod bookshelf;
 
 use std::io;
@@ -90,7 +89,7 @@ fn load_books(){
             authors.push(iter.next().unwrap().to_string());
         }
 
-        let book = book::Book{
+        let book = bookshelf::book::Book{
             title : title.unwrap().to_string(),
             publisher : publisher.unwrap().to_string(), 
             date : date.unwrap().to_string(), 
@@ -98,7 +97,7 @@ fn load_books(){
         };
 
         let mut writer = bookshelf.write().unwrap();
-        *writer.add(book);
+        writer.add(book);
     }
 
 }

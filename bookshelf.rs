@@ -1,5 +1,5 @@
 #[path = "./book.rs"]
-mod book;
+pub mod book;
 
 pub struct Bookshelf
 {
