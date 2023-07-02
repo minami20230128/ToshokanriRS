@@ -7,7 +7,7 @@ pub struct Bookshelf
 }
 
 impl Bookshelf{
-    pub fn add(&self, book : book::Book)
+    pub fn add(mut self, book : book::Book)
     {
         self.booklist.push(book);
     }
